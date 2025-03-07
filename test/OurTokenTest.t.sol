@@ -5,7 +5,6 @@ import {Test} from "forge-std/Test.sol";
 import {OurToken} from "../src/OurToken.sol";
 import {DeployOurToken} from "../script/DeployOurToken.s.sol";
 
-
 contract OurTokenTest is Test {
     OurToken public ourToken;
     DeployOurToken public deployer;
@@ -21,7 +20,7 @@ contract OurTokenTest is Test {
         ourToken.transfer(bob, STARTING_BALANCE);
     }
 
-    function testBobBalance() view public {
+    function testBobBalance() public view {
         assertEq(ourToken.balanceOf(bob), STARTING_BALANCE);
     }
 
